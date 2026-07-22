@@ -1,0 +1,26 @@
+
+- api/v1/profile returns html
+  - the app calls port 3000 instead of 8000
+      curl 'http://localhost:3000/api/v1/profile'
+  - but is should be
+        curl -X 'GET' \
+          'http://localhost:8000/api/v1/profile' ...
+- summary calculation http://localhost:8000/api/v1/dashboard/summary?property_id=prop-003&_t=1784725032710
+  ! _t is not used in the summary request. bug or something else?
+  ! seed data has the following; most likely that's the issue with inconsistency
+        INSERT INTO reservations (id, property_id, tenant_id, check_in_date, check_out_date, total_amount) VALUES
+            ('res-tz-1', 'prop-001', 'tenant-a', '2024-02-29 23:30:00+00', '2024-03-05 10:00:00+00', 1250.000);
+  ! I'll dig down into the timezone
+- what timestamp do we use for computing monthly averages etc? timezone dependent? convert all to utc
+  - backend/app/api/v1/dashboard.py
+  - backend/app/services/cache.py:16
+  - backend/app/services/reservations.py:calculate_total_revenue
+    ! returns mock data when the db is not available
+    ! indeed, error in docker
+        Database error for prop-003 (tenant: tenant-a): Database pool not available
+      risen by if db_pool.session_factory:
+    ! C:\development\tests\New_devs_App\backend\app\core\database_pool.py:30 doesn't await
+    ! missing configuration values backend/app/config.py:34
+      however, they are marked as optional
+- settings fails to log issues
+- VITE_SUPABASE_URL being not defined causes `[SessionRecovery] Recovery error: TypeError: can't access property "split", (void 0) is undefined` at frontend\src\utils\sessionRecovery.ts:

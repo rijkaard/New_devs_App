@@ -1,0 +1,59 @@
+
+- refreshing twice logs out http://localhost:3000/login both on chrome and firefox
+- loading errors
+    [API SECURITY] No valid tenant ID - bypassing cache for /api/v1/auth/me
+    [API SECURITY] No valid tenant ID - bypassing cache for /api/v1/dashboard/summary?property_id=prop-001&_t=1784724136809
+    [API SECURITY] No valid tenant ID - bypassing cache for /api/v1/company-settings
+    [API SECURITY] No valid tenant ID - bypassing cache for /api/v1/dashboard/summary?property_id=prop-005&_t=1784724344854
+    [SessionRecovery] Recovery error: TypeError: can't access property "split", (void 0) is undefined
+        performRecovery http://localhost:3000/assets/index-BBy3FDYH.js:2
+        o http://localhost:3000/assets/index-BBy3FDYH.js:2
+        promise callback*a http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        performRecovery http://localhost:3000/assets/index-BBy3FDYH.js:2
+        recoverSession http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        recoverSession http://localhost:3000/assets/index-BBy3FDYH.js:2
+        tryRecover http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+    Login error: TypeError: can't access property "session", s is undefined
+        signIn http://localhost:3000/assets/index-BBy3FDYH.js:2
+        o http://localhost:3000/assets/index-BBy3FDYH.js:2
+        promise callback*a http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        signIn http://localhost:3000/assets/index-BBy3FDYH.js:2
+        onSubmit http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+        onSubmit http://localhost:3000/assets/index-BBy3FDYH.js:2
+        Ve http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        We http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        r http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        $r http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        jr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Kr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        ps http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Oe http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Kr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Zn http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Xn http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        qr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Hr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Qr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        Qr http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        createRoot http://localhost:3000/assets/react-core-B2bfBmQ1.js:1
+        <anonymous> http://localhost:3000/assets/index-BBy3FDYH.js:2
+    [SessionRecovery] No session from getSession, checking localStorage directly...
+- jwt authentication
+- when loading profile
+    Error loading profile: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data index-BBy3FDYH.js:2:161284
+        S http://localhost:3000/assets/index-BBy3FDYH.js:2
+        i http://localhost:3000/assets/index-BBy3FDYH.js:2
+        (Async: promise callback)
+        a http://localhost:3000/assets/index-BBy3FDYH.js:2
+        u http://localhost:3000/assets/index-BBy3FDYH.js:2
+    profile returns HTML
